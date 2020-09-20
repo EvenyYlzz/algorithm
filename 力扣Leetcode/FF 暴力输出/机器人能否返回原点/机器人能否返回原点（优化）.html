@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var judgeCircle = function(moves) {
+    var R = 0 , D = 0
+    for( var i = 0 ; i<moves.length ; i++ ){
+        if( moves[i] == 'R' ){
+            R++
+        }
+        else if( moves[i] == 'L' ){
+            R--
+        }
+        else if( moves[i] == 'U' ){
+            D++
+        }
+        else if( moves[i] == 'D' ){
+            D--
+        }
+    }
+    if( R == 0 && D == 0 ){
+        return true
+    }else{
+        return false
+    }
+};
+
+var moves = "UD"
+
+console.log(judgeCircle(moves))
+    </script>
+</body>
+</html>

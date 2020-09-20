@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var compressString = function(S) {
+
+    X = S
+    S = S + ' ' 
+    let count = 0
+    let s = ''
+    for( var i = 0 ; i<S.length-1 ; i++ ){
+        if( S[i]==S[i+1] ){
+            count++
+        }else{
+            count++
+            s = s + S[i]
+            t = count
+            s = s + t.toString()
+            count = 0
+        }
+    }
+
+    S = X
+    if( s.length >= S.length ){
+        return S
+    }else{
+        return s
+    }
+};
+
+var S = "bb"
+console.log(compressString(S))
+
+    </script>
+</body>
+</html>

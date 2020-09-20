@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var majorityElement = function(nums) {
+    let map = new Map()
+    const L = nums.length
+    for( var i=0 ; i<nums.length ; i++ ){
+        let count = map.get(nums[i]) || 0
+        map.set(nums[i],count+1)
+    }
+    var arr = new Set(nums)
+    var xxx = [...arr]
+    for( var i=0 ; i<xxx.length ; i++ ){
+        if( map.get(xxx[i]) > L/2 ){
+            return xxx[i]
+        }
+    }
+};
+var nums = [2,2,1,1,1,2,2]
+console.log(majorityElement(nums))
+    </script>
+</body>
+</html>

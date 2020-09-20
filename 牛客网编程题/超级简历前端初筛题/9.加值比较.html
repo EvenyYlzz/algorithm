@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var jiazhibijiao = function (arr,number) {
+    let newArr = []
+    var max = Math.max(...arr)
+    arr.forEach( item => {
+        if( item+number >= max ){
+            newArr.push(true)
+        }else{
+            newArr.push(false)
+        }
+    })
+    return newArr
+}
+
+
+let arr = [10,15,18,6,8]
+var number = 6
+// let newArr = [false,true,true,false,false]
+console.log(jiazhibijiao(arr,number))
+    </script>
+</body>
+</html>

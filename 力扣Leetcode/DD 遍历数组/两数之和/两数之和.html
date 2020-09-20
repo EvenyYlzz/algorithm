@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var twoSum = function(nums, target) {
+            for(var i = 0; i < nums.length ; i++){
+                for(var j = 1; j < nums.length ; j++){
+                    if(nums[i]+nums[j]==target && i!=j){
+                        return [i,j]
+                    }
+                    else {
+                        continue
+                    }
+                }
+            }
+        };
+        var nums=[2,5,5,11];
+        var target = 10;
+        var x = twoSum(nums,target);
+        console.log(x);
+    </script>
+</body>
+</html>

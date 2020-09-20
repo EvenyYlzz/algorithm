@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var exchange = function(nums) {
+    let temp
+    for( var i = 0 ; i<nums.length ; i++ ){
+        if( nums[i] % 2 == 1 ){
+            temp = nums[i]
+            nums.splice(i,1)
+            nums.unshift(temp)
+        }
+    }
+    return nums
+};
+
+nums = [1,2,3,4]
+console.log(exchange(nums))
+    </script>
+</body>
+</html>

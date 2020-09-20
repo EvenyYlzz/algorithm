@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var qiujiao = function (a,b) {
+    var long , short
+    var arr = []
+    if( a.length >= b.length ){
+        long = a
+        short = b
+    }else{
+        long = b
+        short = a
+    }
+    for( var i = 0 ; i<long.length ; i++ ){
+        if( short.indexOf(long[i]) !== -1 ){
+            arr.push(long[i])
+        }
+    }
+    return arr
+}
+
+var a = [1, 2, 3, 4, 5, 7]
+var b = [2, 4, 6, 7]
+console.log(qiujiao(a,b))
+    </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var compress = function(chars) {
+
+    if( chars.length <= 2 ){
+        return chars
+    }
+    chars.push('')
+    var count = 0
+    var arr = []
+    for( var i = 0 ; i<chars.length ; i++ ){
+        if( chars[i] == chars[i+1] ){
+            count++
+        }else{
+            count++
+            if( count==1 ){
+                arr.push(chars[i])
+            }else{
+                arr.push(chars[i])
+                count = count.toString()
+                for( var k = 0 ; k<count.length ; k++ ){
+                    arr.push(count[k])
+                }
+            }
+            var count = 0
+        }
+    }
+    arr.pop()
+    return arr
+};
+
+var chars = ["a","a","b","b","c","c","c"]
+console.log(compress(chars))
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var findTheDifference = function(s, t) {
+    let maps = new Map()
+    for( var i=0 ; i<s.length ; i++ ){
+        let count = maps.get(s[i]) || 0
+        maps.set(s[i],count+1)
+    }
+    
+    // 统计s中的各个字符出现字数建立字典
+    // 遍历t中的字符，如果存在则次数-1
+    // 当次数=0了 这是t加的同一种字符，所以t比s多一个，s已经为0，t还多一个
+    // 当undefinded 则是t加的不同的字符，所以s字典中没有定义这个键
+
+    for( let letter of t ){
+        let k = maps.get(letter)
+        if( k==0 || k==undefined ){
+            return letter
+        }
+        else {
+            k=k-1
+            maps.set( letter , k )
+        } 
+    }
+};
+
+s = "dbca"
+t = "abcde"
+console.log(findTheDifference(s,t))
+    </script>
+</body>
+</html>

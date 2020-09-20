@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var lengthOfLastWord = function(s) {
+    if( s == '' ) return 0
+    s = s.split(' ')
+    console.log(s)
+    for( var i = 0 ; i<s.length ; i++ ){
+        if( s[i] == '' ){
+            s.splice(i,1)
+            i = 0
+        }
+    }
+    return s[s.length-1].length
+};
+
+var s = "b   a    "
+console.log(lengthOfLastWord(s))
+    </script>
+</body>
+</html>

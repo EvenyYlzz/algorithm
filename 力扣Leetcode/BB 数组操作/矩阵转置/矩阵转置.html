@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var transpose = function(A) {
+    let arr = []
+    for( var i = 0 ; i<A[0].length ; i++ ){
+        arr.push([])
+        for( var k = 0 ; k<A.length ; k++ ){
+            arr[i].push(A[k][i])
+        }
+    }
+    return arr
+};
+
+var A = [[1,2,3],[4,5,6]]
+console.log(transpose(A))
+    </script>
+</body>
+</html>

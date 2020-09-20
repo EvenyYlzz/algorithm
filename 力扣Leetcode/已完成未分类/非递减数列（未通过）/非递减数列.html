@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var checkPossibility = function(nums) {
+    if( nums.length <= 2 ){
+        return true
+    }
+    let count = 0
+    for( var i = 2 ; i<nums.length ; i++ ){
+        if( nums[i-1] > nums[i] || nums[i-2] > nums[i] ){
+            count++
+        }
+    }
+    if( count <= 1  ){
+        return true
+    }else{
+        return false
+    }
+};
+
+var nums = [4,2,1]
+console.log(checkPossibility(nums))
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var numIdenticalPairs = function(nums) {
+    let count = 0
+    for( var i = 0 ; i<nums.length-1 ; i++ ){
+        for( var k = i+1 ; k<nums.length ; k++ ){
+            if( nums[i] == nums[k] ){
+                count++
+            }
+        }
+    }
+    return count
+};
+
+var nums = [1,1,1,1]
+console.log(numIdenticalPairs(nums))
+    </script>
+</body>
+</html>

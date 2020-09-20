@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var maxProduct = function(nums) {
+    var a = nums[0];
+    var b = nums[1];
+
+    for (var i = 2; i < nums.length; i++) {
+        if (a > b) {
+            nums[i] > b && (b = nums[i]);
+        } else {
+            nums[i] > a && (a = nums[i]);
+        }
+    }
+
+    return (a - 1) * (b - 1);
+    
+    //遍历一次直接找出最大最小值
+};
+
+var nums = [10,2,5,2]
+console.log(maxProduct(nums))
+    </script>
+</body>
+</html>

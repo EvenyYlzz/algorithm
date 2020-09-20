@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var rotate = function(nums, k) {
+    k=k%nums.length
+    if(nums.length==1){
+        return console.log(nums)
+    }
+    var arr = []
+    for(var i =0;i<k;i++){
+        arr.push(nums[nums.length-k+i])
+    }
+    nums.splice(nums.length-k,k)
+    for(var i = arr.length-1;i>=0;i--){
+        nums.unshift(arr[i])
+    }
+    console.log(nums)
+};
+var numbers = [1,2]
+var j = 3
+rotate(numbers,j)
+    </script>
+</body>
+</html>

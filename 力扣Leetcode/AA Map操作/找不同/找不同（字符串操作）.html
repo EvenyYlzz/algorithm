@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var findTheDifference = function(s, t) {
+    for( let letter of s ){
+        t = t.replace(letter,'')
+    }
+    return t
+};
+        
+s = "dbca"
+t = "abcde"
+console.log(findTheDifference(s,t))
+    </script>
+</body>
+</html>

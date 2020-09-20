@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var maxNumberOfBalloons = function(text) {
+    let map = new Map()
+    for( var i=0 ; i<text.length ; i++ ){
+        let count = map.get(text[i]) || 0
+        map.set(text[i],count+1)
+    }
+    let s = "balon"
+    let arr = []
+    for( var i=0 ; i<s.length ; i++ ){
+        if( map.get(s[i]) == undefined ){
+            continue
+        }
+        if( s[i] == 'l' || s[i] == 'o'  ){
+            arr.push( Math.floor(map.get(s[i])/2) )
+        }else{
+            arr.push(map.get(s[i]))
+        }
+    }
+    if( arr.length == 5 ){
+        return Math.min(...arr)
+    }else{
+        return 0
+    }
+};
+
+var text = "leetcode"
+console.log(maxNumberOfBalloons(text))
+    </script>
+</body>
+</html>

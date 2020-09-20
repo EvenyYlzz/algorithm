@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var minDeletionSize = function(A) {
+    let count = 0
+    let arr = []
+    for( var i = 0 ; i<A[0].length ; i++ ){
+        arr.push([])
+        for( var k = 0 ; k<A.length ; k++ ){
+            arr[i].push(A[k][i])
+        }
+    }
+    
+    for( var i = 0 ; i<arr.length ; i++ ){
+        for( var k = 0 ; k<arr[0].length ; k++ ){
+            if( arr[i][k] > arr[i][k+1] ){
+                count++
+                break
+            }
+        }
+    }
+    return count
+};
+
+var A = ["zyx", "wvu", "tsr"]
+console.log(minDeletionSize(A))
+    </script>
+</body>
+</html>

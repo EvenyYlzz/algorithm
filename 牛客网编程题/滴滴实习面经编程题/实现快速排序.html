@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function quickSort(arr) {
+  if(arr.length < 2) {
+    return arr;
+  } else {
+    const pivot = arr[0]; // 基准值
+    const pivotArr = []; // 一样大的放中间
+    const lowArr= []; // 小的放左边
+    const hightArr = []; // 大的放右边
+    arr.forEach(current => {
+      if(current === pivot) pivotArr.push(current);
+      else if(current > pivot) hightArr.push(current);
+      else lowArr.push(current);
+    })
+    return quickSort(lowArr).concat(pivotArr).concat(quickSort(hightArr));
+  }
+}
+
+    </script>
+</body>
+</html>

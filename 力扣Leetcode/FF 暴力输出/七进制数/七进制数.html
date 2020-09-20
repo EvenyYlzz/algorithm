@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   var convertToBase7 = function(num) {
+    const remStack = []
+    const digits = '0123456'
+    let number = num
+    let dec =''
+if(number>0){
+    while(number>0){
+        rem = Math.floor(number%7)
+        remStack.push(rem);
+        number = Math.floor(number/7)
+    }
+    while(remStack.length!=0){
+        dec += digits[remStack.pop()]
+    }
+    return dec
+}
+else if(number==0){
+    return dec = '0'
+}
+else if(number<0){
+    number = Math.abs(number)
+    while(number>0){
+        rem = Math.floor(number%7)
+        remStack.push(rem);
+        number = Math.floor(number/7)
+    }
+    while(remStack.length!=0){
+        dec += digits[remStack.pop()]
+    }
+    return '-'+dec
+}
+    
+};
+    console.log(convertToBase7(-7))
+    </script>
+</body>
+</html>

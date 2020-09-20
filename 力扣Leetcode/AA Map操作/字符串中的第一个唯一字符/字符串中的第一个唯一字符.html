@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var firstUniqChar = function(s) {
+    let map = new Map()
+    for( var i=0 ; i<s.length ; i++ ){
+        let count = map.get(s[i]) || 0
+        map.set(s[i],count+1)
+    }
+    for( var i=0 ; i<s.length ; i++ ){
+        if( map.get(s[i]) === 1 ){
+            return i
+        }
+    }
+    return -1
+};
+s = "dddccdbba"
+console.log(firstUniqChar(s))
+    </script>
+</body>
+</html>

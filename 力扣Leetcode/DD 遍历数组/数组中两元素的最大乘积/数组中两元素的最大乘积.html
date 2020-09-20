@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var maxProduct = function(nums) {
+    if( nums.length==2 ){
+        return (nums[0]-1)*(nums[1]-1)
+    }
+    nums.sort(sortNum)
+    return (nums[nums.length-1]-1)*(nums[nums.length-2]-1)
+    function sortNum(a,b){
+        return a-b
+    }
+
+    // 库函数sort默认按字母排序，如果是对字符串操作没问题
+    // 但是如果是对数字排序，要规定升序还是降序
+};
+
+var nums = [10,2,5,2]
+console.log(maxProduct(nums))
+    </script>
+</body>
+</html>

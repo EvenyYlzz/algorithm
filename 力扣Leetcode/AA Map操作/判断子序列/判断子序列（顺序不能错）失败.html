@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var isSubsequence = function(s, t) {
+    let mapt = new Map()
+    for( var i=0 ; i<t.length ; i++ ){
+        let count = mapt.get(t[i]) || 0
+        mapt.set(t[i],count+1)
+    }
+
+    for( let letter of s ){
+        let k = mapt.get(letter)
+        if( k==0 || k==undefined ){
+            return false
+        }
+        else {
+            k=k-1
+            mapt.set( letter , k )
+        }
+    }
+    return true
+};
+
+s = "abc"
+t = "ahbgdc"
+console.log(isSubsequence(s,t))
+    </script>
+</body>
+</html>

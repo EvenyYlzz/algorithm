@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var shuffle = function(nums, n) {
+    if( nums.length == 2 ){
+        return nums
+    }
+    let arr = nums.slice(n)
+    nums.splice(n,n)
+    let k = 0
+    for( var i = 1 ; i<(2*n+1) ; i=i+2 ){
+        nums.splice(i,0,arr[k])
+        k++
+    }
+    return nums
+};
+
+var nums = [1,1,2,2]
+var n = 2
+console.log(shuffle(nums, n))
+    </script>
+</body>
+</html>

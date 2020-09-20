@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var sumEvenAfterQueries = function(A, queries) {
+    var sum = 0
+    var arr = []
+    for( var i = 0 ; i<queries.length ; i++ ){
+        A[queries[i][1]] = queries[i][0] + A[queries[i][1]]
+        for( var k = 0 ; k<A.length ; k++ ){
+            if( A[k] % 2 == 0 ){
+                sum = A[k] + sum
+            }
+        }
+        arr.push(sum)
+        sum = 0
+    }
+    return arr
+};
+
+var A = [1,2,3,4]
+var queries = [[1,0],[-3,1],[-4,0],[2,3]]
+console.log(sumEvenAfterQueries(A, queries))
+    </script>
+</body>
+</html>

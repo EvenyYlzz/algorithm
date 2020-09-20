@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var isHappy = function(n) {
+    
+    var arr = []
+    var sum
+    n += ''
+    while (sum !== 1) {
+        sum = 0
+        for (let i = 0; i < n.length; i++) {
+            sum += n[i]*n[i]
+        }
+        n = sum + ''
+        if ( arr.indexOf(sum)>=0 ) {
+            return false
+        }
+        arr.push(sum)
+    }
+    return true
+}
+
+var n = 19
+console.log(isHappy(n))
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var findMaxConsecutiveOnes = function(nums) {
+    var count = 0
+    var max = 0
+    nums.push(' ')
+    for( var i = 1 ; i<nums.length ; i++ ){
+        if( nums[i] == nums[i-1] && nums[i-1] == 1 ){
+            count++
+        }else{
+            if( nums[i-1] == 1 ){
+                count++
+            }
+            if( count > max ){
+                max = count
+            }
+            count = 0
+        }
+    }
+    return max
+};
+
+var nums = [0,0]
+console.log(findMaxConsecutiveOnes(nums))
+    </script>
+</body>
+</html>

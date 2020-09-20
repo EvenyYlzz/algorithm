@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var balancedStringSplit = function(s) {
+    var n = 0 , count = 0
+    for( var i = 0 ; i<s.length ; i++ ){
+        if( s[i] == 'R' ){
+            n++
+        }
+        else if( s[i] == 'L' ){
+            n--
+        }
+        if( n == 0 ){
+            count++
+        }
+    }
+    return count
+};
+
+// 直接按正常逻辑走，很巧妙的一道题
+
+var s = "RLRRLLRLRL"
+console.log(balancedStringSplit(s))
+    </script>
+</body>
+</html>

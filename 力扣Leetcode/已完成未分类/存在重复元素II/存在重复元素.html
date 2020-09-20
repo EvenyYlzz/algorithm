@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var containsNearbyDuplicate = function(nums, k) {
+    for( var i = 0 ; i<nums.length ; i++ ){
+        for( var j = 0 ; j<nums.length ; j++ ){
+            if( i == j ){
+                continue
+            }
+            if( nums[i] == nums[j] && Math.abs(i-j)<= k ){
+                return true
+            }
+        }
+    }
+    return false
+};
+
+var nums = [1,2,3,1,2,3]
+var k = 2
+console.log(containsNearbyDuplicate(nums, k))
+    </script>
+</body>
+</html>

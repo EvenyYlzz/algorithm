@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var repeatedSubstringPattern = function(s) {
+    if( s.length == 1 ){
+        return false
+    }
+    var str1 = ''
+    var str2 = ''
+    for( var i = 0 ; i< s.length/2 ; i++ ){
+        str1 = str1 + s[i]
+        if( s.length % str1.length == 0 ){
+            str2 = str1.repeat( s.length /str1.length )
+            if( str2 == s ){
+                return true
+            }
+        }
+    }
+    return false
+};
+
+var s = "abcabcabcabc"
+console.log(repeatedSubstringPattern(s))
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var reverseString = function(s) {
+    let x=0
+    let y=s.length-1
+    while(x<y){
+        [s[x],s[y]] = [s[y],s[x]]
+        x++
+        y--
+    }
+    console.log(s)
+};
+s = ["h","e","l","l","o"]
+reverseString(s)
+    </script>
+</body>
+</html>

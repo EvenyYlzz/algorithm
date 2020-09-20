@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var erjinzhi = function (n) {
+    n = n.toString(2)
+    n = n + ' '
+    console.log(n)
+    var count = 1
+    var max = 0
+    for( var i = 0 ; i<n.length-1 ; i++ ){
+        if( n[i] == n[i+1] && n[i] == '1'){
+            count++
+        }else{
+            if( count > max ){
+                max = count
+            }
+            count = 1
+        }
+    }
+    return max
+}
+
+var n = 137438953472
+console.log(erjinzhi(n))
+    </script>
+</body>
+</html>

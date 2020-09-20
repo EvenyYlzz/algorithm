@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var findNumberIn2DArray = function(matrix, target) {
+    for( var n = 0 ; n<matrix.length ; n++ ){
+        for( var m = 0 ; m<matrix[0].length ; m++ ){
+            if( matrix[n][m] == target ){
+                return true
+            }
+        }
+    }
+    return false
+};
+
+var matrix = [
+                [1,   4,  7, 11, 15],
+                [2,   5,  8, 12, 19],
+                [3,   6,  9, 16, 22],
+                [10, 13, 14, 17, 24],
+                [18, 21, 23, 26, 30]
+            ]
+var target = 31
+
+console.log(findNumberIn2DArray(matrix, target))
+    </script>
+</body>
+</html>

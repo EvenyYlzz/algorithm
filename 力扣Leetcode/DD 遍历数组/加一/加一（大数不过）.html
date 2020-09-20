@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var plusOne = function(digits) {
+    if( digits[digits.length-1] !== 9 ){
+        digits[digits.length-1] += 1 
+        return digits
+    }
+    digits = digits.toString()
+    digits = digits.replace(/\,/g,'')
+    digits = parseInt(digits)
+    digits += 1
+    digits = digits.toString().split('')
+    return digits
+};
+var digits = [1,2,9]
+console.log(plusOne(digits))
+    </script>
+</body>
+</html>

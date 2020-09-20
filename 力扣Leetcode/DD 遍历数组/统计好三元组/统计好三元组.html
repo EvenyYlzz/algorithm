@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var countGoodTriplets = function(arr, a, b, c) {
+    let count = 0
+    for( var i = 0 ; i<arr.length-2 ; i++ ){
+        for( var j = 0 ; j<arr.length-1 ; j++ ){
+            for( var k = 0 ; k<arr.length ; k++ ){
+                if( Math.abs(arr[i]-arr[j])<=a && Math.abs(arr[j]-arr[k])<=b && Math.abs(arr[i]-arr[k])<=c && i<j && j<k ){
+                    count++
+                }
+            }
+        }
+    }
+    return count
+};
+
+var arr = [3,0,1,1,9,7]
+var a = 7
+var b = 2
+var c = 3
+console.log(countGoodTriplets(arr, a, b, c))
+    </script>
+</body>
+</html>

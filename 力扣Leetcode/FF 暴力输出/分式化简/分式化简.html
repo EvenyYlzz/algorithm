@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var fraction = function(cont) {
+    let m , n
+    let hemu , hezi
+    let i = cont.length - 1
+    let mu = cont[i] , zi = 1
+    for( var k = 1 ; k < cont.length ; k++ ){
+
+        m = 1
+        n = cont[i-1]  // 左边的值
+
+        if( n != 0 ){  // 非 0 通分算法
+            hemu = m * mu
+            hezi = n * mu + zi * m
+        }
+        if( n == 0 ){  // 0 直接等于该数
+            hezi = zi
+            hemu = mu
+        }
+
+        var t = hemu
+        hemu = hezi
+        hezi = t    // 1除以任何分数  = 该数的倒数
+
+        mu = hemu   // 更新右边的值
+        zi = hezi
+        
+        i = i - 1 // 往左边找值
+    }
+    var nums = []
+    nums.push(hemu)
+    nums.push(hezi)
+    return nums
+};
+
+var cont = [0,0,3]
+console.log(fraction(cont))
+    </script>
+</body>
+</html>

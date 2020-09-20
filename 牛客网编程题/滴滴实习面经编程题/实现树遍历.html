@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var inorder = function ( callback ){
+        this.inorderNode( this.root , callback )
+    }
+
+    var inorderNode = function ( node , callback ){
+        this.inorderNode( node.left )
+        callback()
+        this.inorderNode( node.right )
+    }
+
+    const printNode = (value) => console.log(value)
+
+    this.inorder(printNode)
+
+    </script>
+</body>
+</html>

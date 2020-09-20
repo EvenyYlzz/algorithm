@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var kidsWithCandies = function(candies, extraCandies) {
+    let bools = []
+    for( var i = 0 ; i<candies.length ; i++ ){
+        let t = Math.max(...candies)
+        if( (candies[i] + extraCandies) >= t ){
+            bools.push(true)
+            // candies[i] = true 节省空间
+        }
+        else{
+            bools.push(false)
+            // candies[i] = false 节省空间
+        }
+    }
+    return bools
+};
+
+var candies = [2,3,5,1,3]
+var extraCandies = 3
+console.log(kidsWithCandies(candies, extraCandies))
+    </script>
+</body>
+</html>

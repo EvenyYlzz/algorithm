@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var padding = function (num) {
+    num = num.toString()
+    var zheng , yu
+    for( var i = 0 ; i<num.length ; i++ ){
+        if( num[i] == '.' ){
+            zheng = num.slice(0,i)
+            yu = num.slice(i)
+            break
+        }
+        if( i == num.length-1 ){
+            zheng = num
+        }
+    }
+    var k = 0
+    for( var i = zheng.length-1 ; i>0 ; i-- ){
+        k++
+        if( k == 3 && zheng[i-1] != '-' ){
+            zheng = zheng.slice(0,i) + ',' + zheng.slice(i)
+            i--
+            k=1
+        }
+    }
+    if(yu){
+        zheng = zheng+yu
+    }
+    return zheng
+}
+
+var num = -987654.321
+console.log(padding(num))
+    </script>
+</body>
+</html>

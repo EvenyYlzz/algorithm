@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+var findContinuousSequence = function(target) {
+    var end = 0
+    var arr = []
+    var count = 0
+    for( var i = 0 ; i< target/2 ; i++ ){
+        end = ( -1 + Math.sqrt( 1+4*( 2*target + i*i + i ) ) ) / 2
+        if( end % 1 == 0 ){
+            arr.push([])
+            for( var k = i+1 ; k<=end ; k++ ){
+                arr[count].push(k)
+            }
+            count++
+        }
+    }
+    return arr
+};
+
+
+// 遍历 总和一半即可
+// i得从0开始
+// k首项得按公式算，不能理所当然
+
+var target = 9
+console.log(findContinuousSequence(target))
+    </script>
+</body>
+</html>

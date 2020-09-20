@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var missingNumber = function(nums) {
+    nums.sort((a,b) => (a-b))
+    for( var i = 0 ; i<nums.length+1 ; i++ ){
+        if( i != nums[i] ){
+            return i
+        }
+    }
+};
+
+var nums = [9,6,4,2,3,5,7,0,1]
+console.log(missingNumber(nums))
+    </script>
+</body>
+</html>

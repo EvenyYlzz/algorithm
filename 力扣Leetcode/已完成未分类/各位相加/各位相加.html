@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var addDigits = function(num) {
+    var sum = 0
+    var n
+    while( num/10 >= 1 ){
+        n = num
+        n = n.toString()
+        for( var i = 0 ; i<n.length ; i++ ){
+            sum = sum + Number(n[i])
+        }
+        num = sum
+        sum = 0
+    }
+    return num
+};
+var num = 38
+console.log(addDigits(num))
+    </script>
+</body>
+</html>

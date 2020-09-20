@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var countOdds = function(low, high) {
+    let arr = []
+    for( var i = low ; i<high+1 ; i++ ){
+        if( i % 2 == 1 ){
+            arr.push(i)
+        }
+    }
+    return arr.length
+};
+
+var low = 3
+var high = 7
+console.log(countOdds(low, high))
+    </script>
+</body>
+</html>

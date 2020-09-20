@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var smallerNumbersThanCurrent = function(nums) {
+    let arr = []
+    for( var i = 0 ; i<nums.length ; i++ ){
+        var count = 0
+        for( var k = 0 ; k<nums.length ; k++ ){
+            if( nums[k] < nums[i] ){
+                count++
+            }
+        }
+        arr.push(count)
+    }
+    return arr
+};
+
+var nums = [8,1,2,2,3]
+console.log(smallerNumbersThanCurrent(nums))
+    </script>
+</body>
+</html>

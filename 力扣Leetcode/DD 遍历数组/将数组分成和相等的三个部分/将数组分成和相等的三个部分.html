@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var canThreePartsEqualSum = function(A) {
+    var sum = 0
+    for( var i = 0 ; i<A.length ; i++ ){
+        sum = sum + A[i]
+    }
+    if( sum % 3 != 0 ){
+        return false
+    }
+    sum = sum / 3
+    var k = 0
+    var l = A.length-1
+    var sumk = A[k]
+    var suml = A[l]
+    while( k!=l ){
+        if( sumk != sum ){
+            k++
+            sumk = sumk + A[k]
+        }
+        if( suml != sum ){
+            l--
+            suml = suml + A[l]
+        }
+        if( sum == sumk && sum == suml ){
+            if( k==l-1 ){
+                return false
+            }
+            sumzhong = 0
+            for( var i = k+1 ; i<l ; i++ ){
+                sumzhong = sumzhong + A[i]
+            }
+            if( sumk != sumzhong ){
+                return false
+            }else{
+                return true
+            }
+        }
+    }
+    return false
+};
+
+var A = [0,2,1,-6,6,-7,9,1,2,0,1]
+console.log(canThreePartsEqualSum(A))
+    </script>
+</body>
+</html>

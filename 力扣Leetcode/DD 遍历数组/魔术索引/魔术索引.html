@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var findMagicIndex = function(nums) {
+    for( var i = 0 ; i<nums.length ; i++ ){
+        if( nums[i] == i ){
+            return i
+        }
+    }
+    return -1
+};
+
+var nums = [0,2,3,4,5]
+console.log(findMagicIndex(nums))
+    </script>
+</body>
+</html>

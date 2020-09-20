@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var isPalindrome = function(x) {
+        if(x<0){
+            return false
+        }
+        let b=0
+        let numstr = x.toString()
+        let numarr1 = []
+        let numarr2 = []
+        for(var i =0 ; i<numstr.length;i++){
+            numarr1[i]=numstr[i]
+        }
+        for(var i =numstr.length-1 ; i>=0;i--){
+                numarr2[b]=numstr[i]
+                b++
+        }
+        for(var i = 0; i<numarr1.length;i++){
+            if(numarr1[i] == numarr2[i]){
+                if(i==numarr1.length-1){
+                    return true
+                }else{
+                    continue
+                }
+            }
+            else{
+                return false
+            }
+        }
+    };
+    console.log(isPalindrome(0))
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var isIsomorphic = function(s, t) {
+    let map = new Map()
+    for( var i=0 ; i<s.length ; i++ ){
+        if ( !map.has(s[i]) ) {
+            if( map.has(t[i]) ){
+                if( map.get(t[i]) !== t[i] ) {
+                    map.set(s[i],t[i])
+                } else {
+                    return false
+                }
+            } else {
+                if( t[i] !== t[i-1] ){
+                    map.set(s[i],t[i])
+                }else{
+                    return false
+                }
+            }
+        } else {
+            if( map.get(s[i]) !== t[i] ){
+                return false
+            }
+        }
+    }
+    console.log(map)
+    return true
+};
+var s = "egg"
+var t = "add"
+console.log(isIsomorphic(s, t))
+    </script>
+</body>
+</html>

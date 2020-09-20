@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var isPrefixOfWord = function(sentence, searchWord) {
+    sentence = sentence.split(' ')
+    for( var i = 0 ; i<sentence.length ; i++ ){
+        let str = sentence[i]
+        if( str.length < searchWord.length ){
+            continue
+        }
+        for( var k = 0 ; k<searchWord.length ; k++ ){
+            if( str[k] != searchWord[k] && i == sentence.length-1 ){
+                return -1
+            }
+            if( str[k] != searchWord[k] && i != sentence.length-1 ){
+                break
+            }
+            if( str[k] == searchWord[k] && k != searchWord.length-1 ){
+                continue
+            }
+            return i+1
+        }
+    }
+    return -1
+};
+
+var sentence = "dumb dream duck duck i"
+var searchWord = "drea"
+console.log(isPrefixOfWord(sentence, searchWord))
+    </script>
+</body>
+</html>

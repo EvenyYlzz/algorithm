@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var isPalindrome = function(s) {
+    s = s.replace(/,/g,'').replace(/ /g,'').replace(/_/g,'').replace(/#/g,'').replace(/:/g,'').replace(/\./g,'').replace(/@/g,'').replace(/{/g,'').replace(/}/g,'').replace(/\[/g,'').replace(/]/g,'').replace(/"/g,'').replace(/\\/g,'').replace(/'/g,'').replace(/-/g,'').replace(/\?/g,'').replace(/!/g,'').replace(/;/g,'').replace(/\(/g,'').replace(/\)/g,'').replace(/`/g,'').toLowerCase()
+    console.log(s)
+    if( s.length == 1 ){
+        return true
+    }
+    var i = 0
+    var j = s.length-1
+    while( i<j ){
+        if( s[i] === s[j] ){
+            i++
+            j--
+        }else{
+            return false
+        }
+    }
+    return true
+};
+var s = "`l;`` 1o1 ??;l`"
+console.log(isPalindrome(s))
+    </script>
+</body>
+</html>

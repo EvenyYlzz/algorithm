@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var hammingWeight = function(n) {
+    let count = 0
+    n = n.toString(2)
+    for( var i = 0 ; i<n.length ; i++ ){
+        if( n[i] == '1' ){
+            count++
+        }
+    }
+    return count
+};
+// IDE 与 力扣判题答案不一致
+var n = 11111111111111111111111111111101
+console.log(hammingWeight(n))
+    </script>
+</body>
+</html>

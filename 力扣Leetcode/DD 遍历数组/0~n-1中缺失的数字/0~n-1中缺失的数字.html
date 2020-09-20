@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var missingNumber = function(nums) {
+    if( nums.length == 1 && nums[0] == 0 ){
+        return 1
+    }
+    if( nums.length == 1 && nums[0] == 1 ){
+        return 0
+    }
+    var k = 0
+    for( var i = 0 ; i<nums[nums.length-1] ; i++ ){
+        for(  ; k<nums.length ; k++ ){
+            if( nums[k] == i ){
+                k++
+                break
+            }else{
+                return i
+            }
+        }
+    }
+    return nums[nums.length-1]+1 // 如果前面情况都不符合就是缺失最后一位 直接返回最后一个数+1
+};
+
+var nums = [0,1]
+console.log(missingNumber(nums))
+    </script>
+</body>
+</html>

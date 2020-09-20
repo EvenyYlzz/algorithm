@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var detectCapitalUse = function(word) {
+    var da = 0
+    var xiao = 0
+    for( var i = 0 ; i<word.length ; i++ ){
+        if( word[i].charCodeAt() <= 90 ){
+            da++
+        }else{
+            xiao++
+        }
+    }
+    if( da == word.length ){
+        return true
+    }
+    else if( xiao == word.length ){
+        return true
+    }
+    else if( da==1 && xiao==word.length-1 && word[0].charCodeAt() <= 90 ){
+        return true
+    }else{
+        return false
+    }
+};
+
+var word = "FlaG"
+console.log(detectCapitalUse(word))
+
+
+
+//  str.toLowerCase()   转小写
+//  str.toUpperCase()   转大写
+
+//  A-Z    65-90
+//  a-z    97-122
+
+//  String.fromCharCode(65)  // A 常用
+//  String.fromCodePoint(65) // A 高位
+//  'A'.charCodeAt()         // 65
+    </script>
+</body>
+</html>

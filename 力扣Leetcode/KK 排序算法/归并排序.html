@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var guibing = function (nums){
+    let L = nums.length
+    if( L > 1 ){
+        let middle = Math.floor( L / 2 )
+        let left = guibing( nums.slice( 0,middle ) )
+        let right = guibing( nums.slice( middle,L ) )
+        nums = merge( left , right )
+    }
+    console.log(nums)
+    return nums
+}
+// 分成一个个小数组，再一个个按顺序合并起来，思想是分而治之
+var merge = function (left,right){
+    let i = 0
+    let j = 0
+    let result = []
+    while ( i<left.length && j<right.length){
+        if( left[i] < right[j] ){
+            result.push(left[i])
+            i++
+        }
+        else{
+            result.push(right[j])
+            j++
+        }
+    }
+    if( i<left.length ){
+        result = result.concat(left.slice(i))
+    }
+    else{
+        result = result.concat(right.slice(j))
+    }
+    
+    return result
+}
+
+nums=[5,4,3,2,1,4,11,223,455,44,2211,99]
+guibing(nums)
+    </script>
+</body>
+</html>

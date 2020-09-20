@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var quicksort = function (nums){
+    return quick(nums,0,nums.length-1)
+}
+
+var quick = function (nums,left,right){
+    let index
+    if( nums.length>1 ){
+        
+        index = huafen(nums,left,right)
+
+        if( left<index-1 ){
+            quick( nums,left,index-1 )
+        }
+        if( index<right ){
+            quick( nums,index,right )
+        }
+    }
+    return nums
+}
+
+var huafen = function (nums,left,right){
+    const pivot = nums[Math.floor((left+right) / 2 )]
+    let i = left
+    let j = right
+    while( i<j ){
+        while( nums[i]<pivot ){
+            i++
+        }
+        while( nums[j]>pivot ){
+            j--
+        }
+        // 执行完上面两步，左边已经找到比主元大的值,右边已经找到比主元小的值,那么就要将他们位置交换
+        if( i<=j ){ // 这里少个=号，直接超出栈范围
+            [nums[i],nums[j]] = [nums[j],nums[i]]
+            i++
+            j--
+            // 交换完之后，指针以继续移动，直至退出循环
+        }
+    }
+    return i // 这里还没想明白
+}
+
+
+nums=[5,4,3,2,1,4,11,223,455,44,2211,99]
+console.log(quicksort(nums))
+    </script>
+</body>
+</html>

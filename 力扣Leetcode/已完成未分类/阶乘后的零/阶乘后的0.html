@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var trailingZeroes = function(n) {
+    var count=0
+
+    while(n>=5){
+        count = count + (n/5|0)
+        n = n/5
+    }
+
+    return count
+};
+
+var n = 30
+console.log(trailingZeroes(n))
+    </script>
+</body>
+</html>

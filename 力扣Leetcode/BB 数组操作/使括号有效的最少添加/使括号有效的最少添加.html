@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var minAddToMakeValid = function(S) {
+    while(/\(\)/.test(S)) {
+        S = S.replace(/\(\)/g, '')
+    }
+};
+
+//正则循环查找()
+
+var S = "()))(("
+console.log(minAddToMakeValid(S))
+
+
+// var minAddToMakeValid = function(S) {
+//     let right=0;
+//     let left=0;
+//     for(let i=0;i<S.length;i++) {
+//         if(S[i] == '(') {
+//             left++;
+//         } else {
+//             if(left == 0) {
+//                 right++;
+//             } else {
+//                 left--;
+//             }
+//         }
+//     } 
+//     return left+right; 
+// };
+
+
+    </script>
+</body>
+</html>

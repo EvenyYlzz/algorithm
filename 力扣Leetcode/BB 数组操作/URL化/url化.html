@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var replaceSpaces = function(S, length) {
+   return S.substr(0, length).split(' ').join('%20')
+};
+//还是利用substring限制长度，然后通过split分隔空格，然后再用join把%20加进去，造成一个替换的感觉
+
+
+// var str="www.runoob.com!";
+// document.write(str.substring(4)+"<br>"); // 从第 5 个字符开始截取到末尾
+// document.write(str.substring(4,10)); // 从第 5 个字符开始截取到第10个字符
+// document.write(str.substr(4,6)); // 从第 5 个字符开始截取6个字符
+// document.write(str.slice(4)+"<br>"); // 从第 5 个字符开始截取到末尾
+// document.write(str.slice(4,10)); // 从第 5 个字符开始截取到第10个字符
+
+
+var S = "Mr John Smith    "
+var length = 13
+console.log(replaceSpaces(S, length))
+    </script>
+</body>
+</html>

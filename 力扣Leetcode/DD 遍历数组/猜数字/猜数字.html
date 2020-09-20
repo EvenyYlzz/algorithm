@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var game = function(guess, answer) {
+    let count = 0
+    for( var i = 0 ; i < 3 ; i++ ){
+        if( guess[i] == answer[i] ){
+            count++
+        }
+    }
+    return count
+
+    //return (guess[0]==answer[0])+(guess[1]==answer[1])+(guess[2]==answer[2]) 直接一行搞定
+};
+
+var guess = [1,2,3]
+var answer = [1,2,3]
+
+console.log(game(guess, answer))
+    </script>
+</body>
+</html>

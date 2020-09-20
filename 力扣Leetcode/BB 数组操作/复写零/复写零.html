@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var duplicateZeros = function(arr) {
+    var L = arr.length
+    for( var i = 0 ; i<L ; i++ ){
+        if( arr[i] == 0 && i != L-1 ){
+            arr.splice(i,0,0)
+            i++
+            arr.pop()
+        }
+    }
+    return arr
+};
+
+var arr = [1,0,2,3,0,4,5,0]
+console.log(duplicateZeros(arr))
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var xuanze = function (nums){
+    let min
+    for(var i = 0 ; i<nums.length-1 ; i++){
+        min = i
+        for(var j = i ; j<nums.length ; j++){
+            if(nums[min]>nums[j]){
+                min = j
+            }// 选择排序，如果nums[min]>nums[j]那么就把j记录为最小，那么下一次循环的nums[min]跟nums[j]比较，其实是nums[j]跟nums[j+1]比较，如果j+1跟小，那么又会被记录下来，直到找到最小的数的下标，然后这个开始比较的数与这个最小的数交换位置，就是将最小的数放到它正确的位置
+        }
+        if(min != i){
+            [nums[i],nums[min]] = [nums[min],nums[i]]
+        }
+    }
+    console.log(nums)
+}
+nums=[5,4,3,2,1,4,11,223,455,44,2211,99]
+xuanze(nums)
+    </script>
+</body>
+</html>

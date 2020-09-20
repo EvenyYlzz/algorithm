@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var canPermutePalindrome = function(s) {
+
+    let count = 0
+
+    let map = new Map()
+
+    for( var i=0 ; i<s.length ; i++ ){
+        let count = map.get(s[i]) || 0
+        map.set(s[i],count+1)
+    }
+
+    if( map.size === 1 ){
+        return true
+    }
+
+    for(let item of map.values()){
+        if( item % 2 == 1 ){
+            count++
+        }
+　　}
+
+    if( count > 1 ){
+        return false
+    }else{
+        return true
+    }
+};
+
+var s = "aabbccc"
+console.log(canPermutePalindrome(s))
+
+
+
+//     1、forEach遍历：
+
+// 　　　　　　　　　　map.forEach(function(value,key){
+// 　　　　　　　　　　　　console.log(value,key);
+// 　　　　　　　　　　});
+// 　　　　　函数中第一个参数是属性值，第二个参数是属性
+
+// 　　2、for-of遍历：
+// 　　　　　　　　①for(let item of map){
+
+// 　　　　　　　　　}
+// 　　　　　遍历结果是数组
+// 　　　　　　　　②for(let item of map.values()){
+
+// 　　　　　　　　　}
+// 　　　　　遍历属性值
+// 　　　　　　　　③for(let item of map.keys()){
+
+// 　　　　　　　　　}
+// 　　　　　遍历属性
+
+// 　　3、entries遍历：
+
+// 　　　　　　　　for(let item of map.entries()){
+
+// 　　　　　　　　}
+// 　　　　　遍历结果同forEach
+
+
+
+    </script>
+</body>
+</html>

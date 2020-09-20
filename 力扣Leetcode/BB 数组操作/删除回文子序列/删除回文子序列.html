@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var removePalindromeSub = function(s) {
+    if( s == '' ){
+        return 0
+    }
+    var bool = false
+    console.log(s.length/2)
+    for( var i = 0 ; i<s.length/2 ; i++ ){
+        if( s[i] != s[s.length-1-i] ){
+            bool = true
+        }
+    }
+    if( bool == true ){
+        return 2  
+    }else{
+        return 1
+    }
+};
+
+var s = "ababa"
+console.log(removePalindromeSub(s))
+
+//我很实在地举了一些奇奇怪怪的例子，然后发现我总是可以在两步之内删完。我就想，拼一把，空串就返回0，回文串就返回1，其他的我全返回2.结果一提交就通过了。我还想来看看官方如何证明只有两个字母的字符串为何可以通过一步删除就剩下一个回文串的。原来是先删a，再删b。服气！
+    </script>
+</body>
+</html>

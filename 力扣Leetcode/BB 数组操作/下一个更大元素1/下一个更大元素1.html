@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var nextGreaterElement = function(nums1, nums2) {
+
+    var index
+    for( var i = 0 ; i<nums1.length ; i++ ){
+        var flag = true
+        index = nums2.indexOf(nums1[i])
+        if( index == nums2.length-1 ){
+            nums1[i] = -1
+            continue
+        }else{
+            for( var k = index+1 ; k<nums2.length ; k++ ){
+                if( nums2[k] > nums1[i] ){
+                    nums1[i] = nums2[k]
+                    flag = false
+                    break
+                }
+            }
+            if( flag == true ){
+                nums1[i] = -1
+            }
+        }
+    }
+    return nums1
+};
+
+var nums1 = [2,4]
+var nums2 = [1,2,3,4]
+console.log(nextGreaterElement(nums1, nums2))
+    </script>
+</body>
+</html>

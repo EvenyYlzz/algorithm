@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var merge = function(A, m, B, n) {
+    A.splice(m,n)
+    for( var i = 0 ; i<B.length ; i++ ){
+        A.push(B[i])
+    }
+    return A.sort((a,b) => a-b)
+};
+var A = [1,2,3,0,0,0]
+var m = 3
+var B = [2,5,6]    
+var n = 3
+console.log(merge(A, m, B, n))
+    </script>
+</body>
+</html>

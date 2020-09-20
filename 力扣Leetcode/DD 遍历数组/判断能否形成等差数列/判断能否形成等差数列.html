@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var canMakeArithmeticProgression = function(arr) {
+    if( arr.length == 2 ){
+        return true
+    }
+    arr.sort( (a,b) => (a-b) )
+    let chazhi = arr[1] - arr [0]
+    let t
+    for( var i = 2 ; i<arr.length ; i++ ){
+        t = arr[i] - arr[i-1]
+        if( t !== chazhi ){
+            return false
+        }
+    }
+    return true
+};
+
+var arr = [3,5,1]
+console.log(canMakeArithmeticProgression(arr))
+    </script>
+</body>
+</html>

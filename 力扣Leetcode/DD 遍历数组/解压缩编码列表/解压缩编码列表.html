@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var decompressRLElist = function(nums) {
+    if( nums.length == 1 ){
+        return nums
+    }
+    var cishu = 0
+    var shu = 0
+    var arr = []
+    for( var i = 0 ; i<nums.length ; i=i+2 ){
+        cishu = nums[i]
+        shu = nums[i+1]
+        for( var k = 0 ; k<cishu ; k++ ){
+            arr.push(shu)
+        }
+    }
+    return arr
+};
+
+var nums = [1,2,3,4]
+console.log(decompressRLElist(nums))
+    </script>
+</body>
+</html>

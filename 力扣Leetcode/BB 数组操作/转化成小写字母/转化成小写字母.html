@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var toLowerCase = function(str) {
+    var res = ''
+    for( var i = 0 ; i<str.length ; i++ ){
+        var a = str[i].charCodeAt()
+        if( a >= 65 && a <= 90 ){
+            res += String.fromCharCode(a+32)
+            continue
+        }
+        res += str[i]
+    }
+    return res
+};
+
+var str = "HellO"
+console.log(toLowerCase(str))
+    </script>
+</body>
+</html>

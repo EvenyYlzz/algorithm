@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var isUnique = function(astr) {
+    for( var i = 0 ; i<astr.length ; i++ ){
+        for( var k = i+1 ; k<astr.length ; k++ ){
+            if( astr[i] == astr[k] ){
+                return false
+            }
+        }
+    }
+    return true
+};
+
+var astr = 'leetcode'
+console.log(isUnique(astr))
+    </script>
+</body>
+</html>

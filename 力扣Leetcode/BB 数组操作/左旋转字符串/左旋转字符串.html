@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var reverseLeftWords = function(s, n) {
+    s = s + s.slice(0,n)
+    s = s.split('')
+    s.splice(0,n)
+    s = s.toString().replace(/,/g,'')
+    return s
+};
+
+
+// return s.slice(n) + s.slice(0, n) 一行
+
+var s = "abcdefg"
+var n = 2
+console.log(reverseLeftWords(s, n))
+    </script>
+</body>
+</html>

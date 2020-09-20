@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var frequencySort = function(s) {
+    var map = new Map()
+    for( var i = 0 ; i<s.length ; i++ ){
+        let count = map.get(s[i]) || 0
+        map.set( s[i] , count+1 )
+    }
+
+    let arr = []
+    for(let item of map){
+        arr.push(item)
+　　}
+    var Maxarr , index , max
+    var str = ''
+    var L = arr.length
+    for( var x = 0 ; x<L ; x++ ){
+
+        max = arr[0][1]
+        for( var i = 0 ; i<arr.length ; i++ ){
+            if( max <= arr[i][1] ){
+                max = arr[i][1]
+                Maxarr = arr[i]
+                index = i
+            }
+        }
+
+        for( var k = 0 ; k<Maxarr[1] ; k++ ){
+            str = str + Maxarr[0]
+        }
+        arr.splice(index,1)
+    }
+    return str
+};
+
+var s = "abaccadeeefaafcc"
+console.log(frequencySort(s))
+    </script>
+</body>
+</html>

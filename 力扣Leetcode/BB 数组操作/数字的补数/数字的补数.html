@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var findComplement = function(num) {
+    var s = ''
+    num = num.toString(2)
+    for( var i = 0 ; i<num.length; i++ ){
+        if( num[i] == '0' ){
+            s = s + 1
+        }else{
+            s = s + 0
+        }
+    }
+    num = parseInt(s,2).toString(10)
+    return num
+};
+
+var num = 1
+console.log(findComplement(num))
+    </script>
+</body>
+</html>

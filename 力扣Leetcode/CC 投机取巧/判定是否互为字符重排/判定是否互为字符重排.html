@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var CheckPermutation = function(s1, s2) {
+    var arr = s2.split('')
+    for( var i = 0 ; i<s1.length ; i++ ){
+        for( var k = 0 ; k<arr.length ; k++ ){
+            if( s1[i] === arr[k] ){
+                arr.splice(k,1)
+                break
+            }
+            if( k==arr.length-1 && s1[i] != arr[k] ){
+                return false
+            }
+        }
+    }
+    console.log(arr)
+    if( arr.length == 0 ){
+        return true
+    }else{
+        return false
+    }
+};
+
+// 如何将字符串转化为数组 字符串用不了splice
+
+
+
+var s1 = "asvnpzurz"
+
+var s2 = "urzsapzvn"
+console.log(CheckPermutation(s1, s2))
+    </script>
+</body>
+</html>

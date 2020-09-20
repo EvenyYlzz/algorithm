@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var maopao = function (nums){
+    for( var i = 0; i<nums.length-1 ;i++ ){
+        for(var j = 0; j<nums.length-1-i ; j++ ){ //减少不必要的遍历比较，因为有的数已经在正确位置上了
+            //for(var j = 0; j<nums.length-1 ; j++ ){
+            if(nums[j]>nums[j+1]){
+                [nums[j],nums[j+1]]=[nums[j+1],nums[j]]
+            }
+        }
+    }
+    console.log(nums)
+}
+nums=[5,4,3,2,1,4,11,223,455,44,2211,99]
+maopao(nums)
+    </script>
+</body>
+</html>

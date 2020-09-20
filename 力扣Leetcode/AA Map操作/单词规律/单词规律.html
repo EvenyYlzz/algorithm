@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var wordPattern = function(pattern, str) {
+    
+    str = str.split(' ')
+    let map = new Map()
+    var flag = false
+    if( str.length != pattern.length ){
+        return false
+    }
+    for( var i=0 ; i<pattern.length ; i++ ){
+        
+        if( map.get( pattern[i] ) === undefined ){
+
+            if( map.size != 0  ){
+                let t = str[i]
+                for(let item of map.values()){
+                    if( t === item ){
+                        return false
+                    }
+                }
+            }
+
+            map.set( pattern[i] , str[i] )
+            
+        }
+        else {
+
+            let t = str[i]
+            flag = false
+            for(let item1 of map.values()){
+                if( t === item1 ){
+                    for( let item2 of map.keys() ){
+                        if( item1 == map.get(item2) ){
+                            if( pattern[i] != item2 ){
+                                return false
+                            }
+                        }
+                    }
+                    flag = true
+                    break
+                }
+            }
+            if( flag === false ){
+                return false
+            }
+        }
+    }
+
+    return true
+
+};
+
+var pattern = "aba"
+var str = "dog cat cat"
+
+console.log(wordPattern(pattern, str))
+
+    </script>
+</body>
+</html>

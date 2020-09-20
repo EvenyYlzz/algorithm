@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var jishu = function (nums){
+    if(nums.length<2){
+        return nums
+    }
+    const max = findMax(nums)
+
+    const counts = new Array(max)
+    nums.forEach(element => {
+        if( !counts[element] ){
+            counts[element]=0
+        }
+        counts[element]++
+    })
+    
+    // 下面两种写法都可以
+
+    // ①
+    // let array = []
+    // counts.forEach((count,i) => {
+    //     while(count>0){
+    //         array.push(i)
+    //         count--
+    //     }
+    // })
+    // return array
+    
+    // ②
+    let j = 0
+    counts.forEach((count,i) => {
+        while(count>0){
+            nums[j] = i
+            j++
+            count--
+        }
+    })
+    return nums
+}
+
+var findMax = function (nums){
+    let max = nums[0]
+    for( var i = 1; i<nums.length ; i++ ){
+        if( nums[i] > max ){
+            max = nums[i]
+        }
+    }
+    return max
+}
+
+nums=[5,4,3,2,1,4,11,223,455,44,2211,99]
+console.log(jishu(nums))
+    </script>
+</body>
+</html>

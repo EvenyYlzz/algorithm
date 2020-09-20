@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var plusOne = function(digits) {
+    let i = digits.length - 1
+    while( i>=0 ){
+        if( digits[i]+1 < 10 ){
+            digits[i] += 1
+            return digits
+        }else{
+            digits[i] = 0
+        }
+        i--
+    }
+    digits.splice(0,0,1)
+    return digits
+};
+var digits = [1,2,9]
+console.log(plusOne(digits))
+    </script>
+</body>
+</html>
