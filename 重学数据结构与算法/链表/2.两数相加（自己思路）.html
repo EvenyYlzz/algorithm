@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var addTwoNumbers = function(l1, l2) {
+    let p1 = l1 , str1 = ''
+    let p2 = l2 , str2 = ''
+    while(p1){
+        str1 = p1.val + str1
+        p1 = p1.next
+    }
+    while(p2){
+        str2 = p2.val + str2
+        p2 = p2.next
+    }
+    let sum = (BigInt(str1) + BigInt(str2)).toString()
+    let l3 = new ListNode(0)
+    p3 = l3
+    l3.val = sum[sum.length-1]
+    for(let i = sum.length-2; i>=0 ; i--){
+        p3.next = new ListNode(Number(sum[i]))
+        p3 = p3.next
+    }
+    return l3
+};
+    </script>
+</body>
+</html>

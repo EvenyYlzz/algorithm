@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var deleteDuplicates = function(head) {
+    let p1 = head
+    while(p1){
+        if(p1.next && p1.val === p1.next.val){
+            p1.next = p1.next.next
+        }
+        if(p1.next && p1.val !== p1.next.val){
+            p1 = p1.next
+        }else if(p1.next == null){
+            break
+        }
+    }
+    return head
+};
+    </script>
+</body>
+</html>

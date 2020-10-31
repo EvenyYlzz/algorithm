@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var postorderTraversal = function(root) {
+    let res = []
+    function respush(root){
+        if(!root) return
+        if(root.left) respush(root.left)
+        if(root.right) respush(root.right)
+        res.push(root.val)
+    }
+    respush(root)
+    return res
+};
+    </script>
+</body>
+</html>
