@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+//  字典：与集合类似，但是以键值对方式存储
+const map1 = new Map()
+
+//  增删改查
+map1.set('a','aa')  //增
+console.log(map1.get('a'))  //查
+map1.set('b','bb')
+
+map1.delete('b')    //删
+console.log(map1)
+
+// map1.clear()    //删除所有
+
+map1.get('a','aaa')  //改，重新赋值
+console.log(map1)
+
+
+</script>
+</body>
+</html>

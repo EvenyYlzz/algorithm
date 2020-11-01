@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const json = {
+    a: { b: { c:1 } },
+    d: { e: 2 },
+}
+
+const path = ['a', 'b' , 'c']
+
+let p = json
+path.forEach(k => {
+    p = p[k]
+})
+console.log(p)
+
+    </script>
+</body>
+</html>

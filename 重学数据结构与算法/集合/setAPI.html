@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+let mySet = new Set()
+mySet.add(1)
+mySet.add(5)
+mySet.add(5)
+mySet.add('some text')
+
+let p = { a:1, b:2 }
+mySet.add(p)
+mySet.add({ a:1, b:2 })
+//  内存地址不一样，都存入进来
+
+const has = mySet.has(5)
+console.log('has：',has)
+
+console.log(mySet)
+
+mySet.delete(5)
+console.log(mySet)
+
+
+//  迭代一个Set
+//  let item of mySet.keys()
+//  let item of mySet.values()
+//  对于Set，keys跟values一样的
+for(let item of mySet){
+    console.log(item)
+}
+
+
+//  Set与Array互相转换
+
+//  Set => Array
+const myArr1 = [...mySet]
+const myArr2 = Array.from(mySet)
+
+//  Array => Set
+const mySet1 = new Set([1,2,3,4,5])
+
+//  求交集
+const intersection = new Set([...mySet].filter(item => mySet1.has(item)))
+console.log('交集：',intersection)
+
+//  求差集
+const difference = new Set([...mySet].filter(item => !mySet1.has(item)))
+console.log('差集：',difference)
+
+</script>
+</body>
+</html>
