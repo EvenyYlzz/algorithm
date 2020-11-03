@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+var minDepth = function(root) {
+    if(!root) return 0
+    let l = 1
+    let q = [[root,l]]
+    while(q.length){
+        let [n,l] = q.shift()
+        if(!n.left && !n.right){
+            return l
+        }
+        if(n.left) q.push([n.left,l+1])
+        if(n.right) q.push([n.right,l+1])
+    }
+};
+
+
+</script>
+</body>
+</html>

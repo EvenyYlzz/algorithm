@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+const tree = {
+    val: 'a',
+    children: [
+        {
+            val: 'b',
+            children: [
+                {
+                    val: 'd',
+                    children: [],
+                },
+                {
+                    val: 'e',
+                    children: [],
+                }
+            ],
+        },
+        {
+            val: 'c',
+            children: [
+                {
+                    val: 'f',
+                    children: [],
+                },
+                {
+                    val: 'g',
+                    children: [],
+                }
+            ],
+        }
+    ],
+};
+
+let dfs = (n) => {
+    console.log(n.val)
+    n.children.forEach(dfs)
+}
+
+dfs(tree)
+
+
+</script>
+</body>
+</html>

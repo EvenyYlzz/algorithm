@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+var maxDepth = function(root) {
+    if(!root) return 0
+
+    let res = 0
+    let dfs = (node,l) => {
+        if(!node.left && !node.right){
+            res = Math.max(res,l)
+        }
+        if(node.left) dfs(node.left,l+1)
+        if(node.right) dfs(node.right,l+1)
+    }
+    dfs(root,1)
+    return res
+};
+
+</script>
+</body>
+</html>
