@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+const tree = {
+    name: 'root',
+    children: [{
+            name: 'c1',
+            children: [{
+                    name: 'c11',
+                    children: []
+                },
+                {
+                    name: 'c12',
+                    children: []
+                }
+            ]
+        },
+        {
+            name: 'c2',
+            children: [{
+                    name: 'c21',
+                    children: []
+                },
+                {
+                    name: 'c22',
+                    children: []
+                }
+            ]
+        }
+    ]
+}
+
+// let res = []
+// let dfs = (root) => {
+//     res.push(root.name)
+//     console.log(root.name)
+//     root.children.forEach((n) => {
+//         dfs(n)
+//     })
+// }
+// dfs(tree)
+// console.log(res)
+
+//  迭代——栈做法
+// function dfs() {
+//     let stack = [tree]
+//     let res = []
+//     while(stack.length){
+//         let n = stack.pop()
+//         if(n == null) continue
+//         res.push(n.name)
+//         for(let k = n.children.length-1 ; k>=0 ; k--){
+//             stack.push(n.children[k])
+//         }
+//     }
+//     console.log(res)
+// }
+// dfs()
+
+
+//  迭代——队列做法
+// function dfs() {
+//     if(!tree) return
+//     let queue = [tree]
+//     let res = []
+//     while(queue.length){
+//         let n = queue.shift()
+//         if(n == null) continue
+//         res.push(n.name)
+//         for(let k = 0 ; k<n.children.length ; k++){
+//             queue.push(n.children[k])
+//         }
+//     }
+//     console.log(res)
+// }
+// dfs()
+
+
+</script>
+</body>
+
+</html>

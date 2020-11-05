@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// Function.prototype.a = 1
+// Object.prototype.a = 2
+
+// console.log(Object.a)
+// console.log(Object.a === Function.prototype.a)
+// console.log(Object.prototype.a)
+
+
+Function.prototype.a = () => {
+  console.log(1);
+}
+Object.prototype.b = () => {
+  console.log(2);
+}
+function A() {}
+const a = new A();
+a.a();
+a.b();
+A.a()
+
+
+</script>
+</body>
+</html>
