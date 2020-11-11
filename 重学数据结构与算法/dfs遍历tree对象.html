@@ -50,24 +50,25 @@ const tree = {
 // console.log(res)
 
 //  迭代——栈做法
-// function dfs() {
-//     let stack = [tree]
-//     let res = []
-//     while(stack.length){
-//         let n = stack.pop()
-//         if(n == null) continue
-//         res.push(n.name)
-//         for(let k = n.children.length-1 ; k>=0 ; k--){
-//             stack.push(n.children[k])
-//         }
-//     }
-//     console.log(res)
-// }
-// dfs()
+function dfs() {
+    let stack = [tree]
+    let res = []
+    while(stack.length){
+        let n = stack.pop()
+        if(n == null) continue
+        res.push(n.name)
+        for(let k = n.children.length-1 ; k>=0 ; k--){
+            stack.push(n.children[k])
+        }
+    }
+    console.log(res)
+}
+dfs()
 
 
 //  迭代——队列做法
-// function dfs() {
+//  广度优先遍历
+// function bfs() {
 //     if(!tree) return
 //     let queue = [tree]
 //     let res = []
@@ -81,7 +82,7 @@ const tree = {
 //     }
 //     console.log(res)
 // }
-// dfs()
+// bfs()
 
 
 </script>
